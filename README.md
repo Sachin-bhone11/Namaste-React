@@ -1,15 +1,18 @@
 # Namaste-React
 
 Header
-Logo
-Nav items
+-----Logo
+-------Nav items
 Body
-Search
-Restaurant container
-RestaurantCard
-
+-----Search
+-----Restaurant container
+--------RestaurantCard
+-------------img
+-- name, star rating,cuisine
 Footer
 copyright
 Links
 Address
 Contact
+
+config driven UI
