@@ -2,9 +2,10 @@
   "name": "y",
   "version": "1.0.0",
   "description": "this is namaste react by sachin Bhone",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",

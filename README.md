@@ -16,3 +16,14 @@ Address
 Contact
 
 config driven UI
+
+# React Hook
+
+useState()
+useEffect()
+
+Reconciliation Algorithm(React Fiber)
+
+conditional rendenring
+
+whenever state variable update react trigger a reconcilation cycle(re-render the component)
