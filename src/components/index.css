@@ -29,6 +29,11 @@
   margin: 10px;
 }
 
+.nav-items > ul > li > Link {
+  color: blue;
+  text-decoration: none;
+}
+
 .res-card {
   width: 200px;
   border-radius: 5px;
