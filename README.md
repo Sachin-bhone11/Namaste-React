@@ -48,4 +48,11 @@ element: add component
 
 to handle error in terms of wrong route
 
+# useParam
+
 # children routes
+
+# 2 types of routing
+
+-- client side routing
+-- Server side routing
