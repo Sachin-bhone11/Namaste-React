@@ -56,3 +56,7 @@ to handle error in terms of wrong route
 
 -- client side routing
 -- Server side routing
+
+# class base component
+
+# optimization of app
