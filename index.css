@@ -30,6 +30,10 @@
   margin: 10px;
 }
 
+.nav-items > ul > li > a {
+  text-decoration: none;
+}
+
 .res-card {
   width: 200px;
   border-radius: 5px;
