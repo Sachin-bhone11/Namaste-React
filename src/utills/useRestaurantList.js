@@ -1,12 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "./userContext";
 
 const useRestaurantList = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { setUserName } = useContext(UserContext);
   // Handle input change
   const handleSearchOnChange = (e) => {
     setSearchText(e.target.value);
+  };
+
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value);
   };
 
   // Filter restaurants based on search text
@@ -50,6 +56,7 @@ const useRestaurantList = () => {
     handleSearchOnChange,
     handleFilterOnRating,
     handleSearchClick,
+    handleUserNameChange,
   };
 };
 

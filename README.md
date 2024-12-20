@@ -60,3 +60,13 @@ to handle error in terms of wrong route
 # class base component
 
 # optimization of app
+
+# Higher Order Component
+
+higher-order component is a function that takes a component and returns a new component.
+
+# controlled and uncontrolled component
+
+# props drilling
+
+# React Context

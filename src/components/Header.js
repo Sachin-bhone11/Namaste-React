@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utills/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utills/useOnlineStatus";
+import UserContext from "../utills/userContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
 
   const handleChangeBtn = () => {
     btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
@@ -40,6 +42,7 @@ const Header = () => {
           >
             {btnName}
           </button>
+          <li className="font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>

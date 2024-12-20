@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utills/useOnlineStatus";
 import useRestaurantList from "../utills/useRestaurantList";
+import { useContext } from "react";
+import UserContext from "../utills/userContext";
 
 const Body = () => {
   const {
@@ -10,11 +12,13 @@ const Body = () => {
     filteredRestaurant,
     searchText,
     handleSearchOnChange,
+    handleUserNameChange,
     handleFilterOnRating,
     handleSearchClick,
   } = useRestaurantList();
   const onlineStatus = useOnlineStatus();
-
+  const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+  const { loggedInUser } = useContext(UserContext);
   if (onlineStatus === false) {
     return <h1>You are offline please check your connection</h1>;
   }
@@ -46,6 +50,14 @@ const Body = () => {
             Top Rated Restaurant
           </button>
         </div>
+        <div className="m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            value={loggedInUser}
+            onChange={handleUserNameChange}
+            className="border border-black p-2 mx-2"
+          />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
@@ -53,7 +65,11 @@ const Body = () => {
             key={restaurant?.info?.id}
             to={"/restaurants/" + restaurant?.info?.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant?.info?.avgRating > 4.5 ? (
+              <PromotedRestaurantCard resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
