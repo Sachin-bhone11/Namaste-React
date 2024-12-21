@@ -70,3 +70,34 @@ higher-order component is a function that takes a component and returns a new co
 # props drilling
 
 # React Context
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Coonect our store to our app
+- Slice (cartSlice)
+- Dispatch Action
+- Selector
+
+# Types of testing (developer)
+
+- Unit testing
+- Integration testing
+- End to End testing - e2e testing
+
+# Testing Library
+
+- React Testing Library
+- Jest - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+- installed react testing library
+- installed jest
+- installed babel dependencies
+- configure babel
+- configure parcel config filr to disabled default babel transpilation
+- Jest Configuration - npx jest --init
+- Install jsdom library
+- @babel/preset-react this library - to make JSX in test cases
+- include @babel/preset-react in babel config
+- install @testing-library/jest-dom

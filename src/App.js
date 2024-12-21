@@ -10,6 +10,8 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utills/userContext";
+import { Provider } from "react-redux";
+import appStore from "./utills/appStore";
 
 //Chunking, code splitting, dynamic bundling, lazy loading, on demand loading, Dyanamic import
 
@@ -25,12 +27,14 @@ const AppLayout = () => {
     setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
